@@ -21,71 +21,36 @@ import {
 } from 'devextreme-react/data-grid';
 
 //Add API extensions here
-import { fetchVoters } from '../../api/voterService';
+import { fetchMembers } from '../../api/memberService';
 
 const columns = [
-  "CountyID",
-  "StateID",
-  "Status",
-  "County",
-  "Precinct",
-  "CongDist",
-  "AssmDist",
-  "BrdofEd",
-  "Regent",
-  "CntyComm",
-  "Rwards",
-  "Swards",
-  "SchBdTrust",
-  "SchBdAtLrg",
-  "First",
-  "Last",
-  "Middle",
-  "Suffix",
-  "Phone",
+  "first_name",
+  "last_name",
   "email",
-  "BirthDate",
-  "RegDate",
-  "Party",
-  "StreetNo",
-  "StreetName",
-  "Address1",
-  "Address2",
-  "City",
-  "State",
-  "Zip",
-  "RegisteredDays",
-  "Age",
-  "TotalVotes",
-  "Generals",
-  "Primaries",
-  "Polls",
-  "Absentee",
-  "Early",
-  "Provisional",
-  "LikelytoVote",
-  "Score",
-
-
+  "gender",
+  "phone",
+  "username",
+  "jobtitle",
+  "address",
 
   // ... add other columns here
 ];
 
-export default function VoterData() {
-  const [voters, setVoters] = useState(null);
+export default function MemberData() {
+  const [members, setMembers] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchVoters()
+    fetchMembers()
         .then((data) => {
-          setVoters(data);
+          setMembers(data);
           setLoading(false);
         })
         .catch((error) => {
           setError(error);
           setLoading(false);
-          console.error("An error occurred while fetching data:", error);
+          console.error("An error occurred while fetching race data:", error);
         });
   }, []);
 
@@ -93,7 +58,7 @@ export default function VoterData() {
   if (loading) return <div>Loading...</div>;
 
   //Error conditions
-  if (error) return <div>An error occurred while fetching data. Please try again later.</div>;
+  if (error) return <div>An error occurred while fetching race data. Please try again later.</div>;
 
   return (
       <div className="App">
@@ -104,8 +69,8 @@ export default function VoterData() {
             allowColumnResizing={true}
             allowColumnReordering={true}
             columnAutoWidth={true}
-            dataSource={voters}
-            keyExpr="StateID"
+            dataSource={members}
+            keyExpr="username"
             sortMode="multiple"
         >
 

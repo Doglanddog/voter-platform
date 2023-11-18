@@ -4,18 +4,53 @@ export const navigation = [
     path: '/home',
     icon: 'home'
   },
+
   {
-    text: 'Examples',
+    text: 'Voter Information',
     icon: 'folder',
     items: [
       {
-        text: 'Voter Data',
+        text: 'State Voter List',
         path: '/voterData'
-      },
+      },      
+    ] 
+  },
+
+  {
+    text: 'Race Information',
+    icon: 'folder',
+    items: [
       {
-        text: 'Example Item',
-        path: '/examplePage',
-      }
+        text: 'Federal Races',
+        path: '/federalraceData'
+      },      {
+        text: 'NV State Races',
+        path: '/stateraceData'
+      },      {
+        text: 'NV Senate Races',
+        path: '/senraceData'
+      },      {
+        text: 'NV Assembly Races',
+        path: '/asmraceData'
+      },
+    ]
+  },
+
+  {
+    text: 'NWPac Administration',
+    icon: 'folder',
+    items: [
+      {
+        text: 'User Administration',
+        path: '/memberData'
+      },      {
+        text: 'Fund Raising',
+        path: '/fundraisingData'
+      },      {
+        text: 'Fiinancial Information',
+        path: '/financialData'
+      },      
+    
     ]
   }
   ];

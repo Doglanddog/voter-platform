@@ -5,15 +5,14 @@ const config = require("../config");
 async function getMultiple(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
-    `SELECT CountyID, StateID, Status, County, Precinct, CongDist, AssmDist, SenDist, BrdofEd,
-      Regent, CntyComm, Rwards, Swards, SchBdTrust, SchBdAtLrg,
-      First, Last, Middle, Phone, email, BirthDate, RegDate, Party,
-      StreetNo, StreetName, Address1, Address2, City, State, Zip, RegisteredDays, Age, 
-      TotalVotes, Generals, Primaries, Polls,  Absentee, Early, Provisional, LikelytoVote, Score
-      FROM base36 LIMIT ${offset},${config.listPerPage}`
+    `SELECT District, Democrat, IAP, LP, NoParty, Other, Republican, ConsVote, ProgVote,
+      RDReg, CPVote, TotalVote, EstCONSBase, RQDPctofIND, TotOTHVotes, ReqOTHtoWin,
+      EstOTHVotes, REPIncumbent, DEMIncumbent
+      FROM raceranksen20231010 LIMIT ${offset},${config.listPerPage}`
   );
   const data = helper.emptyOrRows(rows);
   const meta = { page };
+
   return {
     data,
     meta,

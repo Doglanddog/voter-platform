@@ -3,9 +3,11 @@ import appInfo from './app-info';
 import routes from './app-routes';
 import { SideNavOuterToolbar as SideNavBarLayout } from './layouts';
 import { Footer } from './components';
+//import logo from "../public/nwp-logo-23.png";
 
 export default function Content() {
   return (
+    
     <SideNavBarLayout title={appInfo.title}>
       <Routes>
         {routes.map(({ path, element }) => (

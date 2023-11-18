@@ -3,10 +3,10 @@ const config = {
     /* don't expose password or any sensitive info, done only for demo */
     host: "localhost",
     user: "root",
-    password: "password",
+    password: "Baci8899$",
     database: "testapi",
   },
-  listPerPage: 50,
+  listPerPage: 100,
 };
 
 module.exports = config;

@@ -1,5 +1,5 @@
 const appInfo = {
-    title: 'Voter Platform'
+    title: 'Voter2 Platform'
 };
 export default appInfo;
 

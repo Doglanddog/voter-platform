@@ -21,71 +21,47 @@ import {
 } from 'devextreme-react/data-grid';
 
 //Add API extensions here
-import { fetchVoters } from '../../api/voterService';
+import { fetchRaces } from '../../api/asmraceService';
 
 const columns = [
-  "CountyID",
-  "StateID",
-  "Status",
-  "County",
-  "Precinct",
-  "CongDist",
-  "AssmDist",
-  "BrdofEd",
-  "Regent",
-  "CntyComm",
-  "Rwards",
-  "Swards",
-  "SchBdTrust",
-  "SchBdAtLrg",
-  "First",
-  "Last",
-  "Middle",
-  "Suffix",
-  "Phone",
-  "email",
-  "BirthDate",
-  "RegDate",
-  "Party",
-  "StreetNo",
-  "StreetName",
-  "Address1",
-  "Address2",
-  "City",
-  "State",
-  "Zip",
-  "RegisteredDays",
-  "Age",
-  "TotalVotes",
-  "Generals",
-  "Primaries",
-  "Polls",
-  "Absentee",
-  "Early",
-  "Provisional",
-  "LikelytoVote",
-  "Score",
-
-
+  "District",
+  "Democrat",
+  "IAP",
+  "LP",
+  "NoParty",
+  "Other",
+  "Republican",
+  "ConsVote",
+  "ProgVote",
+  "RDReg",
+  "CPVote",
+  "TotalVote",
+  "EstCONSBase",
+  "RQDPctofIND",
+  "TotOTHVotes",
+  "ReqOTHtoWin",
+  "EstOTHVotes",
+  "REPIncumbent",
+  "DEMIncumbent",
 
   // ... add other columns here
 ];
 
-export default function VoterData() {
-  const [voters, setVoters] = useState(null);
+export default function AsmRaceData() {
+  const [voters, setRaces] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchVoters()
+    fetchRaces()
         .then((data) => {
-          setVoters(data);
+          setRaces(data);
           setLoading(false);
         })
         .catch((error) => {
           setError(error);
           setLoading(false);
-          console.error("An error occurred while fetching data:", error);
+          console.error("An error occurred while fetching race data:", error);
         });
   }, []);
 
@@ -93,7 +69,7 @@ export default function VoterData() {
   if (loading) return <div>Loading...</div>;
 
   //Error conditions
-  if (error) return <div>An error occurred while fetching data. Please try again later.</div>;
+  if (error) return <div>An error occurred while fetching race data. Please try again later.</div>;
 
   return (
       <div className="App">
@@ -105,7 +81,7 @@ export default function VoterData() {
             allowColumnReordering={true}
             columnAutoWidth={true}
             dataSource={voters}
-            keyExpr="StateID"
+            keyExpr="District"
             sortMode="multiple"
         >
 

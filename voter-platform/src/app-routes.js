@@ -1,4 +1,4 @@
-import {HomePage, VoterData, ExamplePage} from './pages';
+import {HomePage, VoterData, FederalRaceData, StateRaceData, AsmRaceData, SenRaceData, MemberData} from './pages';
 import { withNavigationWatcher } from './contexts/navigation';
 
 const routes = [
@@ -11,10 +11,26 @@ const routes = [
         element: VoterData
     },
     {
-        path: '/examplePage',
-        element: ExamplePage
-    }
-
+        path: '/federalraceData',
+        element: FederalRaceData
+    },
+    {
+        path: '/stateraceData',
+        element: StateRaceData
+    },
+    {
+        path: '/senraceData',
+        element: SenRaceData
+    },
+    {
+        path: '/asmraceData',
+        element: AsmRaceData
+    },
+    {
+        path: '/memberData',
+        element: MemberData
+    },
+    
 ];
 
 export default routes.map(route => {
