@@ -70,6 +70,23 @@
     min-height: 100%;
   }
 }
+.logoStyle {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.dx-datagrid-rowsview .dx-row > td, .dx-datagrid-rowsview .dx-row > tr > td {
+  background-color: lightgray;
+}
+
+.dx-datagrid .dx-row-alt > td, .dx-datagrid .dx-row-alt > tr > td {
+  background-color: yellow;
+}
+
+.header-component {
+  background-color: blue;
+}
 
 $side-panel-min-width: 60px;
 

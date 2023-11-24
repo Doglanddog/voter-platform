@@ -4,6 +4,7 @@ import Button from 'devextreme-react/button';
 import UserPanel from '../user-panel/UserPanel';
 import './Header.scss';
 import { Template } from 'devextreme-react/core/template';
+import logo from '../../images/nwp-logo-23.png'
 
 
 export default function Header({ menuToggleEnabled, title, toggleMenu }) {
@@ -23,6 +24,9 @@ export default function Header({ menuToggleEnabled, title, toggleMenu }) {
           cssClass={'header-title'}
           text={title}
           visible={!!title}
+        />
+        <img 
+          src={logo} alt="Logo" className="logoStyle" 
         />
         <Item
           location={'after'}

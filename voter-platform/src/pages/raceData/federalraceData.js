@@ -76,6 +76,7 @@ export default function FederalRaceData() {
         <input/>
 
         <DataGrid
+            rowAlternationEnabled={true}            
             allowSorting={true}
             allowColumnResizing={true}
             allowColumnReordering={true}

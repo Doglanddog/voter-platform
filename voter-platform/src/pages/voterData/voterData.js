@@ -100,6 +100,7 @@ export default function VoterData() {
         <input/>
 
         <DataGrid
+            rowAlternationEnabled={true}            
             allowSorting={true}
             allowColumnResizing={true}
             allowColumnReordering={true}

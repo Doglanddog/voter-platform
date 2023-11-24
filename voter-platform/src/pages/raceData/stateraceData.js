@@ -76,6 +76,7 @@ export default function StateRaceData() {
         <input/>
 
         <DataGrid
+            rowAlternationEnabled={true}            
             allowSorting={true}
             allowColumnResizing={true}
             allowColumnReordering={true}
