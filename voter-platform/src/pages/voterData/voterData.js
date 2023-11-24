@@ -99,6 +99,7 @@ export default function VoterData() {
       <div className="App">
         <input/>
 
+
         <DataGrid
             rowAlternationEnabled={true}            
             allowSorting={true}
@@ -109,12 +110,13 @@ export default function VoterData() {
             keyExpr="StateID"
             sortMode="multiple"
         >
+          
 
           <Export enabled={true} />
           <Grouping autoExpandAll={false} />
           <GroupPanel visible={true} />
           <Paging defaultPageSize={10} />
-          <Pager showPageSizeSelector={true} allowedPageSizes={[5, 10, 20]} />
+          <Pager showPageSizeSelector={true} allowedPageSizes={[15, 50]} />
           {columns.map((field) => (
               <Column dataField={field} key={field} alignment="left" />
           ))}

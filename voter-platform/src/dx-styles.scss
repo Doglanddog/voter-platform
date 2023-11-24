@@ -6,6 +6,10 @@
   height: 100%;
   width: 100%;
 
+  .dx-datagrid-headers {
+    background-color: rgb(255, 0, 0) !important;
+}
+
   .content {
     line-height: 1.5;
     flex-grow: 1;
@@ -71,8 +75,8 @@
   }
 }
 .logoStyle {
-  width: 100px;
-  height: auto;
+  width: 300px;
+  height: 58px;
   margin-right: 10px;
 }
 
