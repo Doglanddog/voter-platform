@@ -10,6 +10,7 @@ import {
   Column,
   Editing,
   FilterRow,
+  HeaderFilter,
   SearchPanel,
   Paging,
   Pager,
@@ -18,6 +19,7 @@ import {
   Export,
   Summary,
   TotalItem,
+  Scrolling,
 } from 'devextreme-react/data-grid';
 
 //Add API extensions here
@@ -101,21 +103,23 @@ export default function VoterData() {
 
 
         <DataGrid
+            dataSource={voters}
+            keyExpr="StateID"
             rowAlternationEnabled={true}            
             allowSorting={true}
             allowColumnResizing={true}
             allowColumnReordering={true}
             columnAutoWidth={true}
-            dataSource={voters}
-            keyExpr="StateID"
             sortMode="multiple"
+            showBorders="true"
         >
-          
-
+          <Scrolling mode='virtual' />
+          <FilterRow visible={true} />
+          <HeaderFilter visible={true} />
           <Export enabled={true} />
           <Grouping autoExpandAll={false} />
           <GroupPanel visible={true} />
-          <Paging defaultPageSize={10} />
+          <Paging defaultPageSize={50} />
           <Pager showPageSizeSelector={true} allowedPageSizes={[15, 50]} />
           {columns.map((field) => (
               <Column dataField={field} key={field} alignment="left" />
